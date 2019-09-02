@@ -1,4 +1,4 @@
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 int main() {
     rpc::server srv(rpc::constants::DEFAULT_PORT);

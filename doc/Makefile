@@ -6,7 +6,7 @@ all: mkdocs
 mkdocs: reference.md
 	docker run --rm -it -v `pwd`:/docs squidfunk/mkdocs-material build
 
-$(DDIR)/index.xml: Doxyfile $(wildcard ../include/rpc/*.h)
+$(DDIR)/index.xml: Doxyfile $(wildcard ../include/rpcpp/*.h)
 	doxygen Doxyfile
 
 all.xml: $(DDIR)/index.xml

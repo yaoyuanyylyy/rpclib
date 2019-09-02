@@ -2,7 +2,7 @@
 #include <math.h>
 #include <time.h>
 
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 #include "mandelbrot.h"
 
 int mandelbrot(double cr, double ci, int max_iterations) {

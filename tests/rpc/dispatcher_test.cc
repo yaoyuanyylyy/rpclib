@@ -2,7 +2,7 @@
 
 #include "gmock/gmock.h"
 
-#include "rpc/dispatcher.h"
+#include "rpcpp/dispatcher.h"
 #include "testutils.h"
 
 using namespace rpc::testutils;

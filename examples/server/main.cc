@@ -1,5 +1,5 @@
 #include <iostream>
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 void foo() { std::cout << "foo was called!" << std::endl; }
 

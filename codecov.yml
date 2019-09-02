@@ -1,6 +1,6 @@
 
 ignore:
-  - "include/rpc/msgpack"
+  - "include/rpcpp/msgpack"
   - "dependencies"
 
 coverage:

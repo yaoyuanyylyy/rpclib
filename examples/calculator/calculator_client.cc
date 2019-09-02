@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "rpc/client.h"
-#include "rpc/rpc_error.h"
+#include "rpcpp/client.h"
+#include "rpcpp/rpc_error.h"
 
 int main() {
     rpc::client c("localhost", rpc::constants::DEFAULT_PORT);

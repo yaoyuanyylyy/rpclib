@@ -9,7 +9,7 @@ set(RPCLIB_INCLUDE_DIR "${RPCLIB_ROOT_DIR}/include")
 
 if(RPCLIB_INCLUDE_DIR)
     file(READ
-        "${RPCLIB_INCLUDE_DIR}/rpc/version.h"
+        "${RPCLIB_INCLUDE_DIR}/rpcpp/version.h"
         RPCLIB_VERSION_CONTENTS)
     string(REGEX REPLACE
         ".*#define RPCLIB_VERSION_MAJOR ([0-9]+).*" "\\1"

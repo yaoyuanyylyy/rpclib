@@ -27,7 +27,7 @@ applications will be implemented step-by-step.
 Our first server application will expose four functions: `add`, `subtract`, `multiply`, `divide`. For the sake of this example, the functions are implemented as various callable entities.
 
 ``` cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 double divide(double a, double b) { return a / b; }
 
@@ -82,7 +82,7 @@ srv.run();
 This is now a functioning (although, in some ways, incomplete) server. The complete listing so far:
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 double divide(double a, double b) { return a / b; }
 
@@ -111,14 +111,14 @@ int main() {
 }
 ```
 
-If you want, you can fire up a [quick python script](https://github.com/msgpack-rpc/msgpack-rpc-python) to test it (don't worry, we'll write a client with `rpclib`, too).
+If you want, you can fire up a [quick python script](https://github.com/msgpack-rpcpp/msgpack-rpc-python) to test it (don't worry, we'll write a client with `rpclib`, too).
 
 ## Responding with errors
 
 There is, however, an issue with this server. Did you spot it? Any client can easily make it crash just by calling `div` with a 0 divider (causing division by zero). What can we do about this? Well of course, we can just check the divider and _not_ perform the division. We still need to return _something_ though:
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 double divide(double a, double b) {
     if (b == 0) {
@@ -134,8 +134,8 @@ Luckily, the msgpack-rpc protocol supports error signaling. We need to modify ou
 
 
 ```cpp
-#include "rpc/server.h"
-#include "rpc/this_handler.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_handler.h"
 
 double divide(double a, double b) {
     if (b == 0) {
@@ -294,7 +294,7 @@ output, the complete listing looks like this so far:
 ```cpp
 #include <iostream>
 
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client c("localhost", 8080);

@@ -11,7 +11,7 @@ Here is a very simple example, a kind of hello world for network-related librari
 server and client:
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 #include <string>
 using std::string;
 
@@ -28,7 +28,7 @@ int main() {
 ```
 
 ```cpp
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 #include <iostream>
 #include <string>
 using std::string;

@@ -2,10 +2,10 @@
 
 #include "gtest/gtest.h"
 
-#include "rpc/client.h"
-#include "rpc/server.h"
-#include "rpc/rpc_error.h"
-#include "rpc/this_handler.h"
+#include "rpcpp/client.h"
+#include "rpcpp/server.h"
+#include "rpcpp/rpc_error.h"
+#include "rpcpp/this_handler.h"
 
 #include "testutils.h"
 

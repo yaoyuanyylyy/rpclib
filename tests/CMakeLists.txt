@@ -5,14 +5,14 @@ set(TEST_SOURCES
   ${RPCLIB_DEPENDENCIES}/src/gmock-gtest-all.cc
   testmain.cc
   testutils.h
-  rpc/dispatcher_test.cc
-  rpc/client_test.cc
-  rpc/response_test.cc
-  rpc/server_test.cc
-  rpc/this_handler_test.cc
-  rpc/this_session_test.cc
-  rpc/server_session_test.cc
-  rpc/this_server_test.cc)
+  rpcpp/dispatcher_test.cc
+  rpcpp/client_test.cc
+  rpcpp/response_test.cc
+  rpcpp/server_test.cc
+  rpcpp/this_handler_test.cc
+  rpcpp/this_session_test.cc
+  rpcpp/server_session_test.cc
+  rpcpp/this_server_test.cc)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)

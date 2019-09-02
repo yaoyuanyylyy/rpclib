@@ -5,7 +5,7 @@
 #include <memory>
 #include <thread>
 
-#include "rpc/detail/response.h"
+#include "rpcpp/detail/response.h"
 
 using namespace rpc::testutils;
 using namespace rpc::detail;

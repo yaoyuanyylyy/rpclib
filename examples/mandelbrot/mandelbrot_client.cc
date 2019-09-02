@@ -2,7 +2,7 @@
 
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 #include "mandelbrot.h"
 
 int main() {

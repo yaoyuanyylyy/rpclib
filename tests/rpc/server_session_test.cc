@@ -3,11 +3,11 @@
 
 #include "gtest/gtest.h"
 
-#include "rpc/client.h"
-#include "rpc/server.h"
-#include "rpc/this_session.h"
-#include "rpc/rpc_error.h"
-#include "rpc/detail/make_unique.h"
+#include "rpcpp/client.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_session.h"
+#include "rpcpp/rpc_error.h"
+#include "rpcpp/detail/make_unique.h"
 #include "testutils.h"
 
 using namespace rpc::testutils;

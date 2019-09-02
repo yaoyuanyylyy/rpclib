@@ -3,9 +3,9 @@
 
 #include "gtest/gtest.h"
 
-#include "rpc/client.h"
-#include "rpc/server.h"
-#include "rpc/this_session.h"
+#include "rpcpp/client.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_session.h"
 
 #include "testutils.h"
 

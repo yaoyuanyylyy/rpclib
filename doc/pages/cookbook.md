@@ -8,7 +8,7 @@ If you prefer detailed instructions and explanation, you might want to start wit
 ### Creating a server
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -21,7 +21,7 @@ int main() {
 ### Binding (exposing) free functions
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 #include <iostream>
 
 void foo() {
@@ -41,7 +41,7 @@ int main() {
 ### Binding lambdas
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -71,7 +71,7 @@ public:
 #### Version 1: Binding through a lambda (preferred)
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -93,7 +93,7 @@ int main() {
 ```cpp
 #include <functional>
 
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -115,7 +115,7 @@ int main() {
 ### Multiple worker threads
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 #include <iostream>
 
 void foo() {
@@ -139,7 +139,7 @@ int main() {
 ### Binding using custom types
 
 ```cpp
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 struct custom_type {
     int x;
@@ -164,8 +164,8 @@ int main() {
 ### Responding with errors
 
 ```cpp
-#include "rpc/server.h"
-#include "rpc/this_handler.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_handler.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -186,8 +186,8 @@ Even though C++ isn't, `msgpack-rpc` is very lenient on types. Your client might
 a dynamic language.
 
 ```cpp
-#include "rpc/server.h"
-#include "rpc/this_handler.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_handler.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -209,8 +209,8 @@ int main() {
 This prevents the server from ever writing a response to a particular call.
 
 ```cpp
-#include "rpc/server.h"
-#include "rpc/this_handler.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_handler.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -232,8 +232,8 @@ int main() {
 A session represents a client connection on the server. All ongoing writes and reads are completed first.
 
 ```cpp
-#include "rpc/server.h"
-#include "rpc/this_session.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_session.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -255,8 +255,8 @@ not instantenous. The TCP connection will be closed gracefully.
 To gracefully stop all sessions on the server. All ongoing writes and reads are completed first.
 
 ```cpp
-#include "rpc/server.h"
-#include "rpc/this_server.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_server.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -274,8 +274,8 @@ int main() {
 
 ```cpp
 #include <unordered_map>
-#include "rpc/server.h"
-#include "rpc/this_session.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_session.h"
 
 int main() {
     rpc::server srv(8080); // listen on TCP port 8080
@@ -296,7 +296,7 @@ int main() {
 ### Creating a client
 
 ```cpp
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client c("127.0.0.1", 8080);
@@ -311,7 +311,7 @@ int main() {
 ### Calling functions
 
 ```cpp
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client c("127.0.0.1", 8080);
@@ -330,7 +330,7 @@ int main() {
 ### Getting return values
 
 ```cpp
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client c("127.0.0.1", 8080);
@@ -343,7 +343,7 @@ int main() {
 ### Calling functions asynchronously
 
 ```cpp
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client c("127.0.0.1", 8080);
@@ -361,7 +361,7 @@ int main() {
 ### Querying the connection state
 
 ```cpp
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client c("127.0.0.1", 8080);
@@ -374,7 +374,7 @@ int main() {
 ### Applying a timeout to synchronous calls
 
 ```cpp
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client c("127.0.0.1", 8080);

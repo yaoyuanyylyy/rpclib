@@ -68,19 +68,19 @@ endif()
 set(RPCLIB_DEPENDENCIES "${CMAKE_CURRENT_LIST_DIR}/dependencies")
 
 configure_file(
-  "${PROJECT_SOURCE_DIR}/include/rpc/version.h.in"
-  "${PROJECT_SOURCE_DIR}/include/rpc/version.h")
+  "${PROJECT_SOURCE_DIR}/include/rpcpp/version.h.in"
+  "${PROJECT_SOURCE_DIR}/include/rpcpp/version.h")
 
 configure_file(
-  "${PROJECT_SOURCE_DIR}/include/rpc/config.h.in"
-  "${PROJECT_SOURCE_DIR}/include/rpc/config.h")
+  "${PROJECT_SOURCE_DIR}/include/rpcpp/config.h.in"
+  "${PROJECT_SOURCE_DIR}/include/rpcpp/config.h")
 
 configure_file(
   "${PROJECT_SOURCE_DIR}/doc/pages/versions.md.in"
   "${PROJECT_SOURCE_DIR}/doc/pages/versions.md")
 
 file(GLOB_RECURSE RPCLIB_HEADERS
-  include/rpc/*.h
+  include/rpcpp/*.h
   include/msgpack/*.hpp)
 file(GLOB_RECURSE DEP_HEADERS
   ${RPCLIB_DEPENDENCIES}/include/*.h
@@ -91,20 +91,21 @@ set(DEP_SOURCES
   ${RPCLIB_DEPENDENCIES}/src/posix.cc)
 
 add_library(${PROJECT_NAME}
-  lib/rpc/dispatcher.cc
-  lib/rpc/server.cc
-  lib/rpc/client.cc
-  lib/rpc/this_handler.cc
-  lib/rpc/this_session.cc
-  lib/rpc/this_server.cc
-  lib/rpc/rpc_error.cc
-  lib/rpc/detail/server_session.cc
-  lib/rpc/detail/response.cc
-  lib/rpc/detail/client_error.cc
-  lib/rpc/nonstd/optional.cc
+  lib/rpcpp/dispatcher.cc
+  lib/rpcpp/server.cc
+  lib/rpcpp/client.cc
+  lib/rpcpp/this_handler.cc
+  lib/rpcpp/this_session.cc
+  lib/rpcpp/this_server.cc
+  lib/rpcpp/rpc_error.cc
+  lib/rpcpp/detail/server_session.cc
+  lib/rpcpp/detail/response.cc
+  lib/rpcpp/detail/client_error.cc
+  lib/rpcpp/nonstd/optional.cc
   ${DEP_SOURCES}
   ${DEP_HEADERS}
   ${RPCLIB_HEADERS})
+
 
 # Perform steps and checks required for MSVC support
 rpclib_msvc_support()

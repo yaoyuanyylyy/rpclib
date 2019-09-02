@@ -11,7 +11,7 @@
 #
 #   * RPCLIB_FOUND: true if the rpc headers and libraries were found
 #   * RPCLIB_INCLUDE_DIR: the directory where rpc includes are located.
-#                         This means #include "rpc/server.h" works if
+#                         This means #include "rpcpp/server.h" works if
 #                         you add this directory, not #include "server.h".
 #   * RPCLIB_LIBS: The static libraries of rpc (for now, this is only one
 #                  library, but plural was chosen to be future-proof).
@@ -41,7 +41,7 @@ set(FIND_RPCLIB_PATHS
 
 find_path(RPCLIB_INCLUDE_DIR
     PATH_SUFFIXES "include"
-    NAMES "rpc/version.h"
+    NAMES "rpcpp/version.h"
     PATHS ${FIND_RPCLIB_PATHS})
 
 find_library(RPCLIB_LIBS
@@ -50,7 +50,7 @@ find_library(RPCLIB_LIBS
 
 if(RPCLIB_INCLUDE_DIR)
     file(READ
-        "${RPCLIB_INCLUDE_DIR}/rpc/version.h"
+        "${RPCLIB_INCLUDE_DIR}/rpcpp/version.h"
         RPCLIB_VERSION_CONTENTS)
     string(REGEX REPLACE
         ".*#define RPCLIB_VERSION_MAJOR ([0-9]+).*" "\\1"

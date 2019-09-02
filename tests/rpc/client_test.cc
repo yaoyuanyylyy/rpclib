@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
 
-#include "rpc/client.h"
-#include "rpc/server.h"
-#include "rpc/rpc_error.h"
+#include "rpcpp/client.h"
+#include "rpcpp/server.h"
+#include "rpcpp/rpc_error.h"
 #include "testutils.h"
 
 #include <sstream>

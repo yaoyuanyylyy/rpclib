@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "rpc/server.h"
-#include "rpc/this_handler.h"
+#include "rpcpp/server.h"
+#include "rpcpp/this_handler.h"
 
 double divide(double a, double b) {
     if (b == 0.0) {

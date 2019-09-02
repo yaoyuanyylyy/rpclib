@@ -4,9 +4,9 @@
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
-#include "rpc/client.h"
-#include "rpc/rpc_error.h"
-#include "rpc/server.h"
+#include "rpcpp/client.h"
+#include "rpcpp/rpc_error.h"
+#include "rpcpp/server.h"
 #include "testutils.h"
 
 using namespace rpc::testutils;

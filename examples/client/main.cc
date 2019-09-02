@@ -1,5 +1,5 @@
 #include <iostream>
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     rpc::client client("127.0.0.1", rpc::constants::DEFAULT_PORT);

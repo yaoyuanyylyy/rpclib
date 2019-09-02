@@ -17,7 +17,7 @@
 
 ```cpp
 #include <iostream>
-#include "rpc/server.h"
+#include "rpcpp/server.h"
 
 void foo() {
     std::cout << "foo was called!" << std::endl;
@@ -52,7 +52,7 @@ immediately.
 
 ```cpp
 #include <iostream>
-#include "rpc/client.h"
+#include "rpcpp/client.h"
 
 int main() {
     // Creating a client that connects to the localhost on port 8080
