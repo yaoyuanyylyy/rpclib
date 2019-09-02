@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9.0)
+cmake_minimum_required(VERSION 2.8.0)
 project(rpc VERSION 2.2.1)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
@@ -257,4 +257,14 @@ if(NOT MSVC)  # Don't install pkg-config files when building with MSVC
   configure_file(rpclib.pc.in "${CMAKE_CURRENT_BINARY_DIR}/rpclib.pc" @ONLY)
   install(FILES "${CMAKE_CURRENT_BINARY_DIR}/rpclib.pc" DESTINATION "${libdir}/pkgconfig")
 endif()
+
+
+if(CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_CXX_FLAGS "-fPIC ${CMAKE_CXX_FLAGS}")
+    set(CMAKE_CXX_STANDARD 11)
+    message(STATUS "optional:c++11")
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    add_definitions(-D_GLIBCXX_USE_C99=1)
+    message(STATUS "optional:c99")
+endif(CMAKE_COMPILER_IS_GNUCXX)
 
