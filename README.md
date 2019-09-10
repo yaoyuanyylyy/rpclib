@@ -1,6 +1,34 @@
 
 # rpclib ![MIT](https://img.shields.io/badge/license-MIT-blue.svg) [![Build Status](https://travis-ci.org/rpclib/rpclib.svg?branch=master)](https://travis-ci.org/rpclib/rpclib) [![Build status](https://ci.appveyor.com/api/projects/status/9lft2tlamcox8epq?svg=true)](https://ci.appveyor.com/project/sztomi/callme) [![Coverage Status](https://img.shields.io/codecov/c/github/rpclib/rpclib/dev.svg)](https://img.shields.io/codecov/c/github/rpclib/rpclib/dev.svg) ![Coverity](https://scan.coverity.com/projects/7259/badge.svg?flat=1) [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?maxAge=2592000)](https://gitter.im/rpclib/Lobby)
 
+# for ME
+
+新的需求：
+1.默认编译的静态库没有“-FPIC”选项，导致有时候连接不方便
+2.库名称“librpc”和库头文件目录“rpc”和其他的librpc冲突
+3.在openwrt的C++中使用，需要添加一些编译器选项
+
+
+修改步骤：
+1.修改库名称
+在解压目录下的CMakeLists.txt文件头部中修改生成库名称：
+project(rpcpp VERSION 2.2.1)
+
+2.修改编译选项
+在解压目录下的CMakeLists.txt文件末尾添加：
+if(CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_CXX_FLAGS "-fPIC ${CMAKE_CXX_FLAGS}")
+    set(CMAKE_CXX_STANDARD 11)
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    add_definitions(-D_GLIBCXX_USE_C99=1)
+    message(STATUS "optional:-fPIC")
+endif(CMAKE_COMPILER_IS_GNUCXX)
+
+3.修改include文件夹名称
+用vscode打开，然后把"rpc/"替换为"rpcpp/"
+
+
+
 [![waffle](https://badge.waffle.io/rpclib/rpclib.svg?columns=In%20Progress,Waiting%20For%20Release)](https://waffle.io/rpclib/rpclib)
 
 `rpclib` is a RPC library for C++, providing both a client and server implementation. It is built using modern C++14, and as such, requires a recent compiler. Main highlights:
